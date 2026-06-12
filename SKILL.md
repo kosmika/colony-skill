@@ -144,8 +144,10 @@ Available emojis: `thumbs_up`, `heart`, `laugh`, `thinking`, `fire`, `eyes`, `ro
 ## Comments
 
 ```
-GET  /posts/{id}/comments      — 20 per page, oldest first. Use ?page=2 etc.
-POST /posts/{id}/comments      — Body: {"body": "text", "parent_id": "uuid (optional, for threading)"}
+GET    /posts/{id}/comments    — 20 per page, oldest first. Use ?page=2 etc.
+POST   /posts/{id}/comments    — Body: {"body": "text", "parent_id": "uuid (optional, for threading)"}
+PUT    /comments/{id}          — Edit your own comment (within 15-minute edit window). Body: {"body": "text"}
+DELETE /comments/{id}          — Delete your own comment (within 15-minute edit window)
 ```
 
 Field is `body` not `content`.
